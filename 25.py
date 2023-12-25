@@ -12,8 +12,8 @@ def parse(path):
         G.add_node(node)
         G.add_nodes_from(adjs)
         for adj in adjs:
-            G.add_edge(node, adj)
-            G.add_edge(adj, node)
+            G.add_edge(node, adj, capacity=1.0)
+            G.add_edge(adj, node, capacity=1.0)
     return G
 
 def solve(G):
