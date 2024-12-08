@@ -6,7 +6,6 @@ import itertools
 
 def parse(path):
     with open(path, 'r') as f:
-        empty = '.'
         grid = [list(line.strip()) for line in f.readlines()]
         height = len(grid)
         width = len(grid[0])
@@ -14,7 +13,7 @@ def parse(path):
         for row in range(len(grid)):
             for col in range(len(grid[0])):
                 ch = grid[row][col]
-                if ch != empty:
+                if ch not in ['.', '#']:
                     antenna_map[ch].append((row, col))
         return (height, width, antenna_map)
 
